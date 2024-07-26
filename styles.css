@@ -1,0 +1,402 @@
+/* General Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: var(--text-color);
+    transition: background 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body.dark-mode {
+    background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+}
+
+/* Variables */
+:root {
+    --text-color: #333;
+    --header-background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    --header-text-color: #fff;
+    --button-background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    --button-text-color: #fff;
+    --button-hover-background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+    --section-background: #fff;
+    --section-border-color: #e0e0e0;
+    --project-background: #fff;
+    --project-border-color: #ddd;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+body.dark-mode {
+    --text-color: #e0e0e0;
+    --header-background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    --header-text-color: #e0e0e0;
+    --button-background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    --button-text-color: #e0e0e0;
+    --button-hover-background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+    --section-background: #3a3a3a;
+    --section-border-color: #555;
+    --project-background: #3a3a3a;
+    --project-border-color: #555;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Header Styles */
+header {
+    background: var(--header-background);
+    color: var(--header-text-color);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--box-shadow);
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    flex: 1;
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+header h1:hover {
+    transform: scale(1.1);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: var(--header-text-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--button-hover-background);
+}
+
+#theme-toggle {
+    background: var(--button-background);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+    margin-left: 10px; /* Space between nav and button */
+}
+
+#theme-toggle:hover {
+    background: var(--button-hover-background);
+    transform: scale(1.1);
+}
+
+/* Button Styles */
+button, .contact-button {
+    padding: 10px 20px;
+    background: var(--button-background);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+button:hover, .contact-button:hover {
+    background: var(--button-hover-background);
+    box-shadow: var(--box-shadow);
+    transform: scale(1.05);
+}
+
+.main {
+    flex: 1;
+}
+
+section {
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    background-color: var(--section-background);
+    border: 1px solid var(--section-border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+section:hover {
+    box-shadow: var(--box-shadow);
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--text-color);
+    display: inline-block;
+}
+
+section p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* About Section Styles */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-content {
+    flex: 2;
+}
+
+.about-photo {
+    flex: 1;
+    text-align: center;
+}
+
+.about-photo img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Project Styles */
+.project {
+    padding: 1rem;
+    background-color: var(--project-background);
+    border: 1px solid var(--project-border-color);
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    box-shadow: var(--box-shadow);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    max-height: 90%; /* Ensure the project divs do not exceed the viewport height */
+    overflow: auto; /* Add scroll if content exceeds the div height */
+    opacity: 0;
+    z-index: 0;
+}
+
+.project h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--header-background);
+}
+
+.project p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.project a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--button-background);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.project a:hover {
+    color: var(--button-hover-background);
+}
+
+.project img {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.project img:hover {
+    transform: scale(1.05);
+}
+
+.project img::after {
+    content: 'View Project';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project img:hover::after {
+    opacity: 1;
+}
+
+/* Active Project Styles */
+.project.active {
+    opacity: 1;
+    z-index: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Tilted Project Styles */
+.project.prev, .project.next {
+    opacity: 0.7;
+    z-index: 0;
+}
+
+.project.prev {
+    transform: translate(-150%, -50%) rotateY(20deg);
+}
+
+.project.next {
+    transform: translate(50%, -50%) rotateY(-20deg);
+}
+
+/* Carousel Styles */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Ensure enough space for project divs */
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+.carousel-wrapper {
+    position: relative;
+    height: 100%;
+}
+
+.carousel-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-button {
+    background: var(--button-background);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.carousel-button:hover {
+    background: var(--button-hover-background);
+    transform: scale(1.1);
+}
+
+/* Contact Styles */
+.contact-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.contact-button {
+    background: var(--button-background);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.contact-button:hover {
+    background: var(--button-hover-background);
+    box-shadow: var(--box-shadow);
+    transform: scale(1.05);
+}
+
+/* Project Details Styles */
+.project-details img {
+    max-width: 80%; /* Adjust the percentage as needed */
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.project-details ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.project-details a {
+    color: var(--button-background);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.project-details a:hover {
+    color: var(--button-hover-background);
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: var(--header-background);
+    color: var(--header-text-color);
+    position: relative;
+    width: 100%;
+    margin-top: auto;
+    box-shadow: var(--box-shadow);
+}

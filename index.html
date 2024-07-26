@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tristin Rohr | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Tristin Rohr</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="theme-toggle">Toggle Theme</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>I am a software developer with a passion for building web applications. I have experience working with various technologies including HTML, CSS, JavaScript, and React. I enjoy solving complex problems and continuously learning new skills to improve my craft. In my spare time, I like to contribute to open-source projects and explore new programming languages.</p>
+            </div>
+            <div class="about-photo">
+                <img src="images/profile.jpeg" alt="Profile Photo">
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="carousel">
+                <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
+                <div class="carousel-wrapper">
+                    <div class="carousel-inner">
+                        <div class="project" id="project1">
+                            <h3>Live-LOL-Tracker</h3>
+                            <p>The Live League of Legends Tracker is a cutting-edge web application designed to provide real-time insights and statistics for League of Legends players. Leveraging the Riot Games API, this tool delivers up-to-date information on player performance, live match data, and comprehensive game analytics, all presented in an intuitive and user-friendly interface.</p>
+                            <a href="project1.html">
+                                <img src="images/lol-logo.webp" alt="Live-LOL-Tracker">
+                            </a>
+                        </div>
+                        <div class="project" id="project2">
+                            <h3>Find-My-Brewey</h3>
+                            <p>Welcome to Find My Brewery, your go-to platform for discovering breweries near you! Whether you're a craft beer enthusiast or simply looking for a new spot to unwind, Find My Brewery makes it easy to find breweries in any state.</p>
+                            <a href="project2.html">
+                                <img src="images/Screenshot 2024-07-25 at 10.44.39 AM.jpg" alt="Find-My-Brewey">
+                            </a>
+                        </div>
+                        <div class="project" id="project3">
+                            <h3>Potty_Partner</h3>
+                            <p>Potty Partner is a web application designed to help users find bathrooms and leave reviews. Whether you’re traveling, in a new city, or just out and about, Potty Partner makes it easy to locate nearby restrooms and read user reviews to find the cleanest, most accessible options. This app aims to provide a community-driven resource for bathroom locations and conditions, ensuring that everyone has access to clean and safe facilities when they need them most.</p>
+                            <a href="project3.html">
+                                <img src="images/Screenshot 2024-07-25 at 10.53.34 AM.jpg" alt="Potty_Partner">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-buttons">
+                <a href="mailto: tristist@gmail.com" class="contact-button">Email</a>
+                <a href="https://github.com/TristinRohr" class="contact-button" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/tristin-rohr-a975a6276" class="contact-button" target="_blank">LinkedIn</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tristin Rohr. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
