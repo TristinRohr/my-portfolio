@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Theme toggle functionality
     function updateThemeButton() {
         const themeToggle = document.getElementById('theme-toggle');
         if (document.body.classList.contains('dark-mode')) {
@@ -27,28 +28,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Carousel functionality
     const projects = document.querySelectorAll('.project');
-    let currentIndex = 0;
+    let currentProject = 0;
 
     function updateCarousel() {
         projects.forEach((project, index) => {
             project.classList.remove('prev', 'active', 'next');
-            if (index === currentIndex) {
+            if (index === currentProject) {
                 project.classList.add('active');
-            } else if (index === (currentIndex - 1 + projects.length) % projects.length) {
+            } else if (index === (currentProject - 1 + projects.length) % projects.length) {
                 project.classList.add('prev');
-            } else if (index === (currentIndex + 1) % projects.length) {
+            } else if (index === (currentProject + 1) % projects.length) {
                 project.classList.add('next');
             }
         });
     }
 
-    function moveCarousel(direction) {
-        currentIndex = (currentIndex + direction + projects.length) % projects.length;
+    document.querySelector('.carousel-button.prev').addEventListener('click', function() {
+        currentProject = (currentProject - 1 + projects.length) % projects.length;
         updateCarousel();
-    }
+    });
 
-    document.querySelector('.prev').addEventListener('click', () => moveCarousel(-1));
-    document.querySelector('.next').addEventListener('click', () => moveCarousel(1));
+    document.querySelector('.carousel-button.next').addEventListener('click', function() {
+        currentProject = (currentProject + 1) % projects.length;
+        updateCarousel();
+    });
 
     updateCarousel();
 });
